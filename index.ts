@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 3030;
 app.use(bodyParser.json());
 
 app.use("*", (req: Request, res: Response, next: NextFunction) => {
-  console.log("Request", req);
-  console.log("Response", res);
+  console.log("Request Headers", req.rawHeaders);
+  console.log("Request Body", req.body);
   next();
 });
 
@@ -33,3 +33,5 @@ function checkFiscalCode(fiscalCode: string): boolean {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+export default app;

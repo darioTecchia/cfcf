@@ -2,11 +2,15 @@
   "name": "cf-validator",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "index.ts",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
-    "dev": "NODE_ENV=development nodemon app.ts",
-    "start": "NODE_ENV=production ts-node app.ts",
+    "dev": "nodemon index.ts",
+    "start": "node dist/index.ts",
     "build": "tsc",
+    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dario Tecchia",
